@@ -1,0 +1,12 @@
+# C++ builds
+cpp_core/build/
+*.exe
+*.obj
+*.o
+
+# Python
+__pycache__/
+.venv/
+venv/
+.idea/
+.vscode/
