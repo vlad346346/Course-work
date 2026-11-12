@@ -1,4 +1,4 @@
-#include <vector>
+п»ї#include <vector>
 #include <stack>
 #include <random>
 #include <algorithm>
@@ -11,7 +11,7 @@
 
 extern "C" {
 
-    // Заповнює масив out (розмір w*h) бітами відкритих проходів
+    // Р—Р°РїРѕРІРЅСЋС” РјР°СЃРёРІ out (СЂРѕР·РјС–СЂ w*h) Р±С–С‚Р°РјРё РІС–РґРєСЂРёС‚РёС… РїСЂРѕС…РѕРґС–РІ
     EXPORT void generate_maze(int w, int h, unsigned seed, unsigned char* out) {
         std::fill(out, out + w * h, 0);
         std::vector<bool> visited(w * h, false);
@@ -29,18 +29,18 @@ extern "C" {
             int cur = st.top();
             int x = cur % w, y = cur / w;
 
-            std::vector<int> options;                 // куди можна піти
+            std::vector<int> options;                 // РєСѓРґРё РјРѕР¶РЅР° РїС–С‚Рё
             for (int d = 0; d < 4; ++d) {
                 int nx = x + dx[d], ny = y + dy[d];
                 if (nx >= 0 && nx < w && ny >= 0 && ny < h && !visited[ny * w + nx])
                     options.push_back(d);
             }
 
-            if (options.empty()) { st.pop(); continue; }   // тупик: повертаємось
+            if (options.empty()) { st.pop(); continue; }   // С‚СѓРїРёРє: РїРѕРІРµСЂС‚Р°С”РјРѕСЃСЊ
 
             int d = options[rng() % options.size()];
             int next = (y + dy[d]) * w + (x + dx[d]);
-            out[cur] |= bit[d];                 // пробиваємо стінку в обидва боки
+            out[cur] |= bit[d];                 // РїСЂРѕР±РёРІР°С”РјРѕ СЃС‚С–РЅРєСѓ РІ РѕР±РёРґРІР° Р±РѕРєРё
             out[next] |= bit[(d + 2) % 4];
             visited[next] = true;
             st.push(next);

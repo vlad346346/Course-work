@@ -14,4 +14,3 @@ venv/
 *.dll
 *.so
 *.dylib
-__pycache__/
