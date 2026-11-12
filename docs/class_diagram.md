@@ -1,4 +1,5 @@
 # Діаграма класів
+![Діаграма класів](class_diagram.png)
 
 ```mermaid
 classDiagram
