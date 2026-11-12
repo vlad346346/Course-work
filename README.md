@@ -25,14 +25,21 @@
 
 ## Як запустити
 
-1. Зібрати C++ ядро (потрібен g++):
+Потрібні: Git, Python 3 (64-bit) і компілятор g++ (наприклад, MinGW-w64).
+
+1. Завантажити проєкт і зайти в його папку:
+```
+git clone https://github.com/vlad346346/Course-work.git
+cd Course-work
+```
+2. Зібрати C++ ядро:
 ```
 cd cpp_core
 g++ -shared -static -o maze.dll bridge.cpp
-```
-2. Запустити Python-частину:
-```
 cd ..
+```
+3. Запустити Python-частину:
+```
 python python_app\main.py
 ```
 
